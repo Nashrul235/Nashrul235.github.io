@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Logout Feature</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+
+  <header>
+    <div class="logo">Toko Helm Sepit</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#about">Tentang Saya</a></li>
+        <li><a href="#" onclick="toggleLoginModal()">Login</a></li>
+      </ul>
+    </nav>
+
+    <div class="theme-toggle" onclick="toggleTheme()">
+      <span class="material-icons" id="themeIcon">dark_mode</span>
+    </div>
+    
+    <div id="user-info" class="user-info">
+      <span id="usernameDisplay" onclick="showLogout()">Username</span>
+      <div id="logout" class="logout" onclick="logout()">Logout</div>
+    </div>
+  </header>
+
+  <!-- Search Section -->
+  <section class="search-section">
+    <input type="text" id="searchInput" placeholder="Cari merk helm..." onkeyup="searchHelm()">
+    <div id="searchResults"></div>
+  </section>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="toggleLoginModal()">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Masukkan username" required><br>
+        <span id="usernameError" class="error-message"></span><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Masukkan password" required><br>
+        <span id="passwordError" class="error-message"></span><br>
+
+        <input type="submit" value="Login">
+      </form>
+    </div>
+  </div>
+
+  <main id="home">
+    <section class="hero">
+      <h1>Selamat Datang di Toko Helm Motor Sepit</h1>
+      <p>Temukan helm terbaik untuk keselamatan berkendara Anda!</p>
+    </section>
+
+    <section class="helm-gallery">
+      <h2>Produk Helm Kami</h2>
+      <div class="helm-items">
+        <div class="helm-item" onclick="showHelmPopup('kyt')">
+          <img src="KYT GALAXY FLAT VSR WHT 1-550x550.png" alt="Helm KYT">
+          <h3>KYT</h3>
+          <p>Rp.750.000</p>
+        </div>
+        <div class="helm-item" onclick="showHelmPopup('gm')">
+          <img src="image-removebg-preview.png" alt="Helm GM">
+          <h3>GM</h3>
+          <p>Rp.640.000</p>
+        </div>
+        <div class="helm-item" onclick="showHelmPopup('mla')">
+          <img src="mla.png" alt="Helm MLA">
+          <h3>MLA</h3>
+          <p>Rp520.000</p>
+        </div>
+        <div class="helm-item" onclick="showHelmPopup('cargloss')">
+          <img src="cargloss.png" alt="Helm Cargloss">
+          <h3>Cargloss</h3>
+          <p>Rp.370.000</p>
+        </div>
+        <div class="helm-item" onclick="showHelmPopup('nhk')">
+          <img src="nhk.png" alt="Helm NHK">
+          <h3>NHK</h3>
+          <p>Rp.540.000</p>
+        </div>
+        <div class="helm-item" onclick="showHelmPopup('jitsu')">
+          <img src="jitsu.png" alt="Helm Jitsu">
+          <h3>Jitsu</h3>
+          <p>Rp.1.340.000</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="about" class="about">
+    <h2>Tentang Saya</h2>
+    <p>Muhammad Nashrul Fakhri, seorang penggemar motor dan keselamatan berkendara. Saya menyediakan helm berkualitas untuk semua kalangan.</p>
+  </section>
+  
+  <footer>
+    <p>&copy; 2024 Toko Helm Motor Sepit. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
